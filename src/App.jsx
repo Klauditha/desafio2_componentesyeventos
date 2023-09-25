@@ -1,11 +1,15 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Formulario from "./components/Formulario/Formulario"
 import Registro from "./components/Registro/Registro";
-import "./App.css";
 
-function App() {
+
+const App = () => {
   return (
-    <>
+    <div className="container mx-auto justify-content-center">
       <Registro />
-    </>
-  );
+      <Formulario />
+    </div>
+  )
 }
-export default App;
+
+export default App
