@@ -4,13 +4,14 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ComponenteError from '../ComponenteError/ComponenteError';
 
-function Formulario() {
+const Formulario = (props) => {
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
-    const [vacio, setVacio] = useState(false);
-    const [igual, setIgual] = useState(false);
     const [password, setPassword] = useState("");
     const [pass, setPass] = useState("");
+    const [vacio, setVacio] = useState(false);
+    const [igual, setIgual] = useState(false);
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
