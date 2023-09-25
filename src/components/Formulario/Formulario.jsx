@@ -1,24 +1,32 @@
 
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 function Formulario() {
+    const [nombre, setNombre] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [Pass, setPass] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    }
     return (
         <>
-            <Form className='justify-content-center align-content-center text-center mb-5'>
+            <Form className='justify-content-center align-content-center text-center mb-5' onSubmit={handleSubmit}>
 
                 <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Control type="text" placeholder="Nombre" />
+                    <Form.Control placeholder="Nombre" type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="email" placeholder="tuemail@ejemplo.com" />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control type="password" placeholder="Contraseña" />
+                    <Form.Control placeholder="tuemail@ejemplo.com" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control type="password" placeholder="Confirma tu contraseña" />
+                    <Form.Control placeholder="Contraseña" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Control placeholder="Confirma tu contraseña" type="password" value={Pass} onChange={(e) => setPass(e.target.value)} />
                 </Form.Group>
 
 
