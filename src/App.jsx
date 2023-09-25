@@ -5,7 +5,7 @@ import Registro from "./components/Registro/Registro";
 
 const App = () => {
   return (
-    <div className="container mx-auto justify-content-center">
+    <div className="container">
       <Registro />
       <Formulario />
     </div>
