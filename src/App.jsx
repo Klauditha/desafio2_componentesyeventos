@@ -1,18 +1,15 @@
 import { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Registro from "./components/Registro/Registro";
 
-
 const App = () => {
-  
-  const [alert, setAlerta] = useState({ error: "", msg: "", color: "" });
+  const [alerta, setAlerta] = useState({ error: false, msg: "", color:""});
 
   return (
     <div className="container">
-
-      <Registro />
+      <Registro setAlerta={setAlerta} alerta={alerta}  />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
