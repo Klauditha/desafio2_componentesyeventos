@@ -6,27 +6,38 @@ const Formulario = (props) => {
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [Pass, setPass] = useState("");
+    const [pass, setPass] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        //caso error provisorio
-        props.setAlerta({
-            error: true,
-            msg: "Completa informacion de tarea !",
-            color: "danger",
-        });
-        //console.log(props.alerta);
-        //caso correcto
-        //setAlerta({ error: false, msg: "OK", color: "success" });
-        return;
-    };
+        if (nombre === "" || email === "" || password === "" || pass === "") {
+            props.setAlerta({
+                error: true,
+                msg: "Existen campos vacios",
+                color: "danger",
+            });
+        } else if (password != pass) {
+            props.setAlerta({
+                error: true,
+                msg: "Claves distintas",
+                color: "danger",
+            });
+        } else {
+            props.setAlerta({
+                error: true,
+                msg: "Registro correcto",
+                color: "success",
+            });
+            setNombre("");
+            setEmail("");
+            setPassword("");
+            setPass("");
+        }
+    }
     return (
         <>
-            <Form
-                className="justify-content-center align-content-center text-center mb-5"
-                onSubmit={handleSubmit}
-            >
+            <Form className='justify-content-center align-content-center text-center ' onSubmit={handleSubmit}>
+
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Control
                         placeholder="Nombre"
@@ -68,4 +79,4 @@ const Formulario = (props) => {
     );
 };
 
-export default Formulario;
+export default Formulario
