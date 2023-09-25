@@ -5,9 +5,8 @@ import Registro from "./components/Registro/Registro";
 
 
 const App = () => {
-  
-  const [alert, setAlerta] = useState({ error: "", msg: "", color: "" });
-
+  const [estado, setEstado] = useState(false);
+  const [mensaje, setMensaje] = useState("");
   return (
     <div className="container">
       <Registro />
