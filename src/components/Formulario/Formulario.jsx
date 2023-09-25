@@ -8,7 +8,6 @@ const Formulario = (props) => {
     const [password, setPassword] = useState("");
     const [pass, setPass] = useState("");
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if (nombre === "" || email === "" || password === "" || pass === "") {
@@ -17,15 +16,12 @@ const Formulario = (props) => {
                 msg: "Existen campos vacios",
                 color: "danger",
             });
-            //setVacio(true);
-            //alert("CAMPOS VACIOS")
         } else if (password != pass) {
             props.setAlerta({
                 error: true,
                 msg: "Claves distintas",
                 color: "danger",
             });
-            //setIgual(true)
         } else {
             props.setAlerta({
                 error: true,
@@ -43,24 +39,44 @@ const Formulario = (props) => {
             <Form className='justify-content-center align-content-center text-center ' onSubmit={handleSubmit}>
 
                 <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Control placeholder="Nombre" type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
+                    <Form.Control
+                        placeholder="Nombre"
+                        type="text"
+                        value={nombre}
+                        onChange={(e) => setNombre(e.target.value)}
+                    />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control placeholder="tuemail@ejemplo.com" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <Form.Control
+                        placeholder="tuemail@ejemplo.com"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control placeholder="Contraseña" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <Form.Control
+                        placeholder="Contraseña"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control placeholder="Confirma tu contraseña" type="password" value={pass} onChange={(e) => setPass(e.target.value)} />
+                    <Form.Control
+                        placeholder="Confirma tu contraseña"
+                        type="password"
+                        value={Pass}
+                        onChange={(e) => setPass(e.target.value)}
+                    />
                 </Form.Group>
+
                 <Button variant="success" type="submit">
                     Registrarse
                 </Button>
-
             </Form>
         </>
-    )
-}
+    );
+};
 
 export default Formulario
