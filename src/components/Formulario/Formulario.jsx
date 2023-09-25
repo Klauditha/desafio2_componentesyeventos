@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 function Formulario() {
     return (
         <>
-            <Form className='justify-content-center align-content-center text-center m-lg-5 w-25'>
+            <Form className='justify-content-center align-content-center text-center mb-5'>
 
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Control type="text" placeholder="Nombre" />
