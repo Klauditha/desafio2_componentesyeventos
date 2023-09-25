@@ -1,9 +1,8 @@
+import "./Mensaje.css"
 
-const Mensaje = () => {
-
+const Mensaje = (props) => {
     return (
-        <div>Mensaje</div>
+        <div className='error p-2 m-2 rounded-3'>{props.mensaje}</div>
     )
 }
-
 export default Mensaje

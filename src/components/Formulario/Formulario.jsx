@@ -2,14 +2,19 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import ComponenteError from '../ComponenteError/ComponenteError';
+import Mensaje from '../Mensaje/Mensaje';
+
 
 const Formulario = (props) => {
     const [nombre, setNombre] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [pass, setPass] = useState("");
+
+    //Estado para error de input vacio
     const [vacio, setVacio] = useState(false);
+
+    //Estado para error de password diferentes
     const [igual, setIgual] = useState(false);
 
 
@@ -20,13 +25,12 @@ const Formulario = (props) => {
         } else {
             setVacio(false)
         }
+
         if (password === pass) {
             setIgual(true)
         } else {
             setIgual(false)
         }
-
-
     }
     return (
         <>
@@ -47,7 +51,8 @@ const Formulario = (props) => {
                 <Button variant="success" type="submit">
                     Registrarse
                 </Button>
-                {vacio ? <ComponenteError /> : ""}
+                {/* {vacio ? <Mensaje /> : ""}
+                {igual ? <Mensaje /> : ""} */}
 
             </Form>
         </>
