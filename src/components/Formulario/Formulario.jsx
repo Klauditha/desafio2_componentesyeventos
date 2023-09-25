@@ -8,25 +8,34 @@ const Formulario = (props) => {
     const [password, setPassword] = useState("");
     const [pass, setPass] = useState("");
 
-    //Estado para error de input vacio
-    const [vacio, setVacio] = useState(false);
-
-    //Estado para error de password diferentes
-    const [igual, setIgual] = useState(false);
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (nombre === "" || email === "" || password === "" || pass === "") {
-            setVacio(true);
+            props.setAlerta({
+                error: true,
+                msg: "Existen campos vacios",
+                color: "danger",
+            });
+            //setVacio(true);
+            //alert("CAMPOS VACIOS")
+        } else if (password != pass) {
+            props.setAlerta({
+                error: true,
+                msg: "Claves distintas",
+                color: "danger",
+            });
+            //setIgual(true)
         } else {
-            setVacio(false)
-        }
-
-        if (password === pass) {
-            setIgual(true)
-        } else {
-            setIgual(false)
+            props.setAlerta({
+                error: true,
+                msg: "Registro correcto",
+                color: "success",
+            });
+            setNombre("");
+            setEmail("");
+            setPassword("");
+            setPass("");
         }
     }
     return (
@@ -48,12 +57,10 @@ const Formulario = (props) => {
                 <Button variant="success" type="submit">
                     Registrarse
                 </Button>
-                {/* {vacio ? <Mensaje /> : ""}
-                {igual ? <Mensaje /> : ""} */}
 
             </Form>
         </>
     )
 }
 
-export default Formulario;
+export default Formulario

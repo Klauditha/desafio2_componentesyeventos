@@ -5,7 +5,7 @@ import Formulario from "../Formulario/Formulario";
 import Alert from "../Alert/Alert";
 import "./Registro.css";
 import Container from "react-bootstrap/Container";
-import Mensaje from "../Mensaje/Mensaje";
+
 
 const Registro = (props) => {
   return (
