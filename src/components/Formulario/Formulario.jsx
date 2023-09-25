@@ -1,9 +1,6 @@
-
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Mensaje from '../Mensaje/Mensaje';
-
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 const Formulario = (props) => {
     const [nombre, setNombre] = useState("");
@@ -59,4 +56,4 @@ const Formulario = (props) => {
     )
 }
 
-export default Formulario
+export default Formulario;
