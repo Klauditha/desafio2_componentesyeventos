@@ -13,7 +13,7 @@ const Formulario = (props) => {
         if (nombre === "" || email === "" || password === "" || pass === "") {
             props.setAlerta({
                 error: true,
-                msg: "Existen campos vacios",
+                msg: "Completa todos los campos !",
                 color: "danger",
             });
         } else if (password != pass) {
@@ -66,12 +66,11 @@ const Formulario = (props) => {
                     <Form.Control
                         placeholder="Confirma tu contraseña"
                         type="password"
-                        value={Pass}
+                        value={pass}
                         onChange={(e) => setPass(e.target.value)}
                     />
                 </Form.Group>
-
-                <Button variant="success" type="submit">
+                <Button className="w-100" variant="success" type="submit">
                     Registrarse
                 </Button>
             </Form>
